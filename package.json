@@ -1,0 +1,31 @@
+{
+  "name": "tmm-back",
+  "version": "1.0.0",
+  "description": "Backend for tell-me-more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GhGeani/tmm-back.git"
+  },
+  "author": "Geani Gherghe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GhGeani/tmm-back/issues"
+  },
+  "homepage": "https://github.com/GhGeani/tmm-back#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
+  }
+}
