@@ -14,4 +14,13 @@ router.get('/articles', async (req, res) => {
   }
 });
 
+router.post('/article', async (req, res) => {
+  try {
+    await articleController.create(req.body.desc);
+    return res.status(201).send('Nice, you did it!').end();
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;

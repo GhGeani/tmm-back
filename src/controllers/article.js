@@ -10,4 +10,10 @@ module.exports = class ArticleController {
     }
     throw new Error('Nothing to see here.');
   }
+
+  async create(description) {
+    // eslint-disable-next-line new-cap
+    const story = new this.articleModel({ description });
+    await story.save();
+  }
 };
