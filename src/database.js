@@ -11,7 +11,7 @@ module.exports = class Database {
     } else {
       url = process.env.prodDB;
     }
-    this.mongoose.connect(url, { useNewUrlParser: true }, (error) => {
+    this.mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
       if (!error) {
         console.log(`Connected to ${this.mode} database -> ${url}`);
         done(null);
