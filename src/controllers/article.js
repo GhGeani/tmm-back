@@ -11,9 +11,9 @@ module.exports = class ArticleController {
     throw new Error('Nothing to see here.');
   }
 
-  async create(description) {
+  async create(article) {
     // eslint-disable-next-line new-cap
-    const story = new this.articleModel({ description });
+    const story = new this.articleModel(article);
     await story.save();
   }
 };
