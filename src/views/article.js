@@ -16,7 +16,9 @@ router.get('/articles', async (req, res) => {
 
 router.post('/article', async (req, res) => {
   try {
-    await articleController.create(req.body.desc);
+    const { author, description } = req.body;
+    const date = new Date().toLocaleString();
+    await articleController.create({ author, description, date });
     return res.status(201).send('Nice, you did it!').end();
   } catch (error) {
     return res.status(500).json({ error: error.message });
