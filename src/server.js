@@ -5,14 +5,17 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const articleViews = require('./views/article');
+const userViews = require('./views/user');
 
 module.exports = class Server {
   constructor(express, mode) {
     this.mode = mode;
     this.app = express();
     this.articleViews = articleViews;
+    this.userViews = userViews;
     this.setMiddle();
     this.app.use('/', this.articleViews);
+    this.app.use('/', this.userViews);
   }
 
   setMiddle() {
